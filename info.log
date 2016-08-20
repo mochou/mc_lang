@@ -1,0 +1,345 @@
+MVM SHOW
+Record Definition: 
+Constant Pool
+Double Constant
+{
+[0: 10.100000], 
+}
+String Constant
+{
+[0: "test5.mc"], [1: "1"], [2: "2"], [3: "print"], [4: "itos"], [5: "btos"], [6: "dtos"], [7: "itod"], [8: "dtoi"], [9: "irand"], [10: "main"], [11: ", "], [12: "
+"], }
+MVM initialization:
+[line: 0] pc:   0, nop
+[line: 9] pc:   1, ipush 10
+[line: 10] pc:   6, dpush 0 #[10.100000]
+[line: 10] pc:  11, npush
+[line: 10] pc:  12, ipush 3
+[line: 10] pc:  17, ipush 3
+[line: 10] pc:  22, newarray 4 #string
+[line: 10] pc:  27, dup
+[line: 10] pc:  28, ipush 0
+[line: 10] pc:  33, spush 0 #["test5.mc"]
+[line: 10] pc:  38, astore
+[line: 10] pc:  39, dup
+[line: 10] pc:  40, ipush 1
+[line: 10] pc:  45, spush 1 #["1"]
+[line: 10] pc:  50, astore
+[line: 10] pc:  51, dup
+[line: 10] pc:  52, ipush 2
+[line: 10] pc:  57, spush 2 #["2"]
+[line: 10] pc:  62, astore
+[line: 10] pc:  63, invoke 7 #[main]
+[line: 10] pc:  68, pop
+[line: 10] pc:  69, pop
+[line: 10] pc:  70, pop
+[line: 10] pc:  71, stop
+
+Function Definition:
+print:
+naive function
+itos:
+naive function
+btos:
+naive function
+dtos:
+naive function
+itod:
+naive function
+dtoi:
+naive function
+irand:
+naive function
+main:
+[line: 12] pc:  72, npush
+[line: 13] pc:  73, npush
+[line: 13] pc:  74, npush
+[line: 13] pc:  75, ipush 0
+[line: 13] pc:  80, load
+[line: 13] pc:  81, invoke 1 #[itos]
+[line: 13] pc:  86, pop
+[line: 13] pc:  87, invoke 0 #[print]
+[line: 13] pc:  92, pop
+[line: 13] pc:  93, pop
+[line: 14] pc:  94, npush
+[line: 14] pc:  95, spush 11 #[", "]
+[line: 14] pc: 100, invoke 0 #[print]
+[line: 14] pc: 105, pop
+[line: 14] pc: 106, pop
+[line: 15] pc: 107, npush
+[line: 15] pc: 108, npush
+[line: 15] pc: 109, ipush 1
+[line: 15] pc: 114, load
+[line: 15] pc: 115, invoke 3 #[dtos]
+[line: 15] pc: 120, pop
+[line: 15] pc: 121, invoke 0 #[print]
+[line: 15] pc: 126, pop
+[line: 15] pc: 127, pop
+[line: 16] pc: 128, npush
+[line: 16] pc: 129, spush 12 #["
+"]
+[line: 16] pc: 134, invoke 0 #[print]
+[line: 16] pc: 139, pop
+[line: 16] pc: 140, pop
+[line: 17] pc: 141, rpush 0 #[bp]
+[line: 17] pc: 146, ipush 0
+[line: 17] pc: 151, iadd
+[line: 17] pc: 152, ipush 0
+[line: 17] pc: 157, store
+[line: 18] pc: 158, rpush 0 #[bp]
+[line: 18] pc: 163, ipush 0
+[line: 18] pc: 168, iadd
+[line: 18] pc: 169, ipush 0
+[line: 18] pc: 174, dup_x1
+[line: 18] pc: 175, store
+[line: 18] pc: 176, pop
+[line: 18] pc: 177, rpush 0 #[bp]
+[line: 18] pc: 182, ipush 0
+[line: 18] pc: 187, iadd
+[line: 18] pc: 188, load
+[line: 18] pc: 189, rpush 0 #[bp]
+[line: 18] pc: 194, ipush -4
+[line: 18] pc: 199, iadd
+[line: 18] pc: 200, load
+[line: 18] pc: 201, icmp
+[line: 18] pc: 202, ifge 217
+[line: 18] pc: 207, bpush 1
+[line: 18] pc: 212, goto 222
+[line: 18] pc: 217, bpush 0
+[line: 18] pc: 222, ifeq 300
+[line: 20] pc: 227, npush
+[line: 20] pc: 228, rpush 0 #[bp]
+[line: 20] pc: 233, ipush -3
+[line: 20] pc: 238, iadd
+[line: 20] pc: 239, load
+[line: 20] pc: 240, rpush 0 #[bp]
+[line: 20] pc: 245, ipush 0
+[line: 20] pc: 250, iadd
+[line: 20] pc: 251, load
+[line: 20] pc: 252, aload
+[line: 20] pc: 253, invoke 0 #[print]
+[line: 20] pc: 258, pop
+[line: 20] pc: 259, pop
+[line: 21] pc: 260, npush
+[line: 21] pc: 261, spush 11 #[", "]
+[line: 21] pc: 266, invoke 0 #[print]
+[line: 21] pc: 271, pop
+[line: 21] pc: 272, pop
+[line: 18] pc: 273, rpush 0 #[bp]
+[line: 18] pc: 278, ipush 0
+[line: 18] pc: 283, iadd
+[line: 18] pc: 284, dup
+[line: 18] pc: 285, load
+[line: 18] pc: 286, ipush 1
+[line: 18] pc: 291, iadd
+[line: 18] pc: 292, dup_x1
+[line: 18] pc: 293, store
+[line: 18] pc: 294, pop
+[line: 18] pc: 295, goto 177
+[line: 18] pc: 300, return
+
+[line: 0] pc:0, nop 
+[line: 9] pc:1, ipush  10
+[line: 10] pc:6, dpush  0 #[10.100000]
+[line: 10] pc:11, npush 
+[line: 10] pc:12, ipush  3
+[line: 10] pc:17, ipush  3
+[line: 10] pc:22, newarray  4 #string
+[line: 10] pc:27, dup 
+[line: 10] pc:28, ipush  0
+[line: 10] pc:33, spush  0 #["test5.mc"]
+[line: 10] pc:38, astore 
+[line: 10] pc:39, dup 
+[line: 10] pc:40, ipush  1
+[line: 10] pc:45, spush  1 #["1"]
+[line: 10] pc:50, astore 
+[line: 10] pc:51, dup 
+[line: 10] pc:52, ipush  2
+[line: 10] pc:57, spush  2 #["2"]
+[line: 10] pc:62, astore 
+[line: 10] pc:63, invoke  7 #main
+[line: 12] pc:72, npush 
+[line: 13] pc:73, npush 
+[line: 13] pc:74, npush 
+[line: 13] pc:75, ipush  0
+[line: 13] pc:80, load 
+[line: 13] pc:81, invoke  1 #itos
+[line: 13] pc:86, pop 
+[line: 13] pc:87, invoke  0 #print
+[line: 13] pc:92, pop 
+[line: 13] pc:93, pop 
+[line: 14] pc:94, npush 
+[line: 14] pc:95, spush  11 #[", "]
+[line: 14] pc:100, invoke  0 #print
+[line: 14] pc:105, pop 
+[line: 14] pc:106, pop 
+[line: 15] pc:107, npush 
+[line: 15] pc:108, npush 
+[line: 15] pc:109, ipush  1
+[line: 15] pc:114, load 
+[line: 15] pc:115, invoke  3 #dtos
+[line: 15] pc:120, pop 
+[line: 15] pc:121, invoke  0 #print
+[line: 15] pc:126, pop 
+[line: 15] pc:127, pop 
+[line: 16] pc:128, npush 
+[line: 16] pc:129, spush  12 #["
+"]
+[line: 16] pc:134, invoke  0 #print
+[line: 16] pc:139, pop 
+[line: 16] pc:140, pop 
+[line: 17] pc:141, rpush  0 #[bp]
+[line: 17] pc:146, ipush  0
+[line: 17] pc:151, iadd 
+[line: 17] pc:152, ipush  0
+[line: 17] pc:157, store 
+[line: 18] pc:158, rpush  0 #[bp]
+[line: 18] pc:163, ipush  0
+[line: 18] pc:168, iadd 
+[line: 18] pc:169, ipush  0
+[line: 18] pc:174, dup_x1 
+[line: 18] pc:175, store 
+[line: 18] pc:176, pop 
+[line: 18] pc:177, rpush  0 #[bp]
+[line: 18] pc:182, ipush  0
+[line: 18] pc:187, iadd 
+[line: 18] pc:188, load 
+[line: 18] pc:189, rpush  0 #[bp]
+[line: 18] pc:194, ipush  -4
+[line: 18] pc:199, iadd 
+[line: 18] pc:200, load 
+[line: 18] pc:201, icmp 
+[line: 18] pc:202, ifge  217
+[line: 18] pc:207, bpush  1
+[line: 18] pc:212, goto  222
+[line: 18] pc:222, ifeq  300
+[line: 20] pc:227, npush 
+[line: 20] pc:228, rpush  0 #[bp]
+[line: 20] pc:233, ipush  -3
+[line: 20] pc:238, iadd 
+[line: 20] pc:239, load 
+[line: 20] pc:240, rpush  0 #[bp]
+[line: 20] pc:245, ipush  0
+[line: 20] pc:250, iadd 
+[line: 20] pc:251, load 
+[line: 20] pc:252, aload 
+[line: 20] pc:253, invoke  0 #print
+[line: 20] pc:258, pop 
+[line: 20] pc:259, pop 
+[line: 21] pc:260, npush 
+[line: 21] pc:261, spush  11 #[", "]
+[line: 21] pc:266, invoke  0 #print
+[line: 21] pc:271, pop 
+[line: 21] pc:272, pop 
+[line: 18] pc:273, rpush  0 #[bp]
+[line: 18] pc:278, ipush  0
+[line: 18] pc:283, iadd 
+[line: 18] pc:284, dup 
+[line: 18] pc:285, load 
+[line: 18] pc:286, ipush  1
+[line: 18] pc:291, iadd 
+[line: 18] pc:292, dup_x1 
+[line: 18] pc:293, store 
+[line: 18] pc:294, pop 
+[line: 18] pc:295, goto  177
+[line: 18] pc:177, rpush  0 #[bp]
+[line: 18] pc:182, ipush  0
+[line: 18] pc:187, iadd 
+[line: 18] pc:188, load 
+[line: 18] pc:189, rpush  0 #[bp]
+[line: 18] pc:194, ipush  -4
+[line: 18] pc:199, iadd 
+[line: 18] pc:200, load 
+[line: 18] pc:201, icmp 
+[line: 18] pc:202, ifge  217
+[line: 18] pc:207, bpush  1
+[line: 18] pc:212, goto  222
+[line: 18] pc:222, ifeq  300
+[line: 20] pc:227, npush 
+[line: 20] pc:228, rpush  0 #[bp]
+[line: 20] pc:233, ipush  -3
+[line: 20] pc:238, iadd 
+[line: 20] pc:239, load 
+[line: 20] pc:240, rpush  0 #[bp]
+[line: 20] pc:245, ipush  0
+[line: 20] pc:250, iadd 
+[line: 20] pc:251, load 
+[line: 20] pc:252, aload 
+[line: 20] pc:253, invoke  0 #print
+[line: 20] pc:258, pop 
+[line: 20] pc:259, pop 
+[line: 21] pc:260, npush 
+[line: 21] pc:261, spush  11 #[", "]
+[line: 21] pc:266, invoke  0 #print
+[line: 21] pc:271, pop 
+[line: 21] pc:272, pop 
+[line: 18] pc:273, rpush  0 #[bp]
+[line: 18] pc:278, ipush  0
+[line: 18] pc:283, iadd 
+[line: 18] pc:284, dup 
+[line: 18] pc:285, load 
+[line: 18] pc:286, ipush  1
+[line: 18] pc:291, iadd 
+[line: 18] pc:292, dup_x1 
+[line: 18] pc:293, store 
+[line: 18] pc:294, pop 
+[line: 18] pc:295, goto  177
+[line: 18] pc:177, rpush  0 #[bp]
+[line: 18] pc:182, ipush  0
+[line: 18] pc:187, iadd 
+[line: 18] pc:188, load 
+[line: 18] pc:189, rpush  0 #[bp]
+[line: 18] pc:194, ipush  -4
+[line: 18] pc:199, iadd 
+[line: 18] pc:200, load 
+[line: 18] pc:201, icmp 
+[line: 18] pc:202, ifge  217
+[line: 18] pc:207, bpush  1
+[line: 18] pc:212, goto  222
+[line: 18] pc:222, ifeq  300
+[line: 20] pc:227, npush 
+[line: 20] pc:228, rpush  0 #[bp]
+[line: 20] pc:233, ipush  -3
+[line: 20] pc:238, iadd 
+[line: 20] pc:239, load 
+[line: 20] pc:240, rpush  0 #[bp]
+[line: 20] pc:245, ipush  0
+[line: 20] pc:250, iadd 
+[line: 20] pc:251, load 
+[line: 20] pc:252, aload 
+[line: 20] pc:253, invoke  0 #print
+[line: 20] pc:258, pop 
+[line: 20] pc:259, pop 
+[line: 21] pc:260, npush 
+[line: 21] pc:261, spush  11 #[", "]
+[line: 21] pc:266, invoke  0 #print
+[line: 21] pc:271, pop 
+[line: 21] pc:272, pop 
+[line: 18] pc:273, rpush  0 #[bp]
+[line: 18] pc:278, ipush  0
+[line: 18] pc:283, iadd 
+[line: 18] pc:284, dup 
+[line: 18] pc:285, load 
+[line: 18] pc:286, ipush  1
+[line: 18] pc:291, iadd 
+[line: 18] pc:292, dup_x1 
+[line: 18] pc:293, store 
+[line: 18] pc:294, pop 
+[line: 18] pc:295, goto  177
+[line: 18] pc:177, rpush  0 #[bp]
+[line: 18] pc:182, ipush  0
+[line: 18] pc:187, iadd 
+[line: 18] pc:188, load 
+[line: 18] pc:189, rpush  0 #[bp]
+[line: 18] pc:194, ipush  -4
+[line: 18] pc:199, iadd 
+[line: 18] pc:200, load 
+[line: 18] pc:201, icmp 
+[line: 18] pc:202, ifge  217
+[line: 18] pc:217, bpush  0
+[line: 18] pc:222, ifeq  300
+[line: 18] pc:300, return 
+[line: 10] pc:68, pop 
+[line: 10] pc:69, pop 
+[line: 10] pc:70, pop 
+[line: 10] pc:71, stop 

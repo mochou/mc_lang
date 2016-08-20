@@ -1,0 +1,236 @@
+translation_unit
+        : import_list definition_or_statement_list
+
+import_list
+        :  IMPORT IDENTIFIER SEMICOLON import_list
+		| /* empty */
+
+definition_or_statement_list
+		: function_definition definition_or_statement_list
+		: recored_definition definition_or_statement_list
+		: statement definition_or_statement_list
+		| /* empty */
+	
+basic_type
+		: VOID
+		| BOOL
+        | INT
+		| DOUBLE
+        | STRING
+
+record_type
+        : IDENTIFIER
+
+array_type
+        : basic_type LB RB bracket_list
+		| record_type LB RB bracket_list
+
+bracket_list
+		: LB RB bracket_list
+		| /* empty */
+
+type
+        : basic_type
+        | record_type
+        | array_type
+
+
+record_definition
+        : RECORD IDENTIFIER LC field_member_list RC
+
+field_member_list
+        : declaration_statement field_member_list
+        | /* empty */
+
+function_definition
+        : FUNCTION modifier type IDENTIFIER LP parameter_list RP block
+		| FUNCTION modifier type IDENTIFIER LP parameter_list RP SEMICOLON
+		
+parameter_list
+        : var type IDENTIFIER parameter_list_E
+        | /* empty */
+
+parameter_list_E
+		: COMMA var type IDENTIFIER parameter_list_E
+		| /* emtpy */
+
+argument_list
+        : assignment_expression
+        | argument_list COMMA assignment_expression
+
+
+statement_list
+        : statement statement_list
+        | /* empty */
+
+expression
+        : assignment_expression expression_e
+
+expression_e
+		: COMMA assignment_expression expression_e
+		| /* empty */
+
+assignment_expression
+        : logical_or_expression
+        | logical_or_expression ASSIGN assignment_expression
+
+logical_or_expression
+        : logical_and_expression logical_or_expression_e
+
+logical_or_expression_e
+		: OR logical_and_expression logical_or_expression_e
+		| /* empty */
+
+logical_and_expression
+        : equality_expression logical_and_expression_e
+
+logical_and_expression_e
+		: AND equality_expression logical_and_expression
+		| /* empty */
+
+equality_expression
+        : relational_expression equality_expression_e
+
+equality_expression_e
+		: EQ relational_expression equality_expression_e
+		| NE relational_expression equality_expression_e
+		| /* empty */
+
+relational_expression
+        : additive_expression relational_expression_e
+
+
+relational_expression_e
+		: GT additive_expression relational_expression_e
+		| GE additive_expression relational_expression_e
+		| LT additive_expression relational_expression_e
+		| LE additive_expression relational_expression_e
+		| /* empty */
+
+additive_expression
+        : multiplicative_expression additive_expression_e
+
+additive_expression_e
+		: ADD multiplicative_expression additive_expression_e
+		| SUB multiplicative_expression additive_expression_e
+
+multiplicative_expression
+        : unary_expression multiplicative_expression_e
+
+multiplicative_expression_e
+		: MUL unary_expression multiplicative_expression_e
+		| DIV unary_expression multiplicative_expression_e
+		| MOD unary_expression multiplicative_expression_e
+		| /* empty */
+
+unary_expression
+        : postfix_expression
+        | SUB postfix_expression
+		| EXCLAMATION postfix_expression
+
+postfix_expression
+        : primary_expression
+        | primary_expression INCREMENT
+        | primary_expression DECREMENT
+
+primary_expression
+        : primary_no_new_array
+        | primary_array_creation
+
+primary_no_new_array
+        : NIL		
+		| BOOL
+		| INT_V
+        | DOUBLE_V
+        | STRING_V
+		| IDENTIFIER array_index_or_field_access
+        | IDENTIFIER LP argument_list RP
+		| IDENTIFIER LP RP
+        | LP expression RP        
+        | LC expression_list RC
+        | LC expression_list COMMA RC
+        | NEW IDENTIFIER	
+
+array_index_or_field_access
+		: LB expression RB array_index_or_field_access
+		| DOT IDENTIFIER array_index_or_field_access
+		| /* empty */
+     
+primary_array_creation
+        | NEW basic_type dimension_expression_list dimension_list
+        | NEW IDENTIFIER dimension_expression_list dimension_list
+
+dimension_expression_list
+        :  LB expression RB dimension_expression_list_E
+
+dimension_expression_list_E
+		: LB expression RB dimension_expression_list_E
+		| /* empty */
+
+dimension_list
+        : LB RB dimension_list
+        | /* empty */
+
+expression_list
+        : /* empty */
+        | assignment_expression
+        | expression_list COMMA assignment_expression
+
+statement
+        : expression SEMICOLON
+        | if_statement
+        | while_statement
+        | for_statement
+        | do_while_statement
+        | return_statement
+        | break_statement
+        | continue_statement
+        | declaration_statement
+
+if_statement
+        : IF LP expression RP block
+        | IF LP expression RP block ELSE block
+		| IF LP expression RP block ELSE if_statement
+
+while_statement
+        : WHILE LP expression RP block
+
+for_statement
+        : FOR LP statement_opt expression_opt SEMICOLON expression_opt RP block
+
+do_while_statement
+        : DO block WHILE LP expression RP SEMICOLON
+
+statement_opt
+		: statement
+		| SEMICOLON
+		| /* empty */
+
+expression_opt
+        : expression
+		| /* empty */
+
+return_statement
+        : RETURN expression_opt SEMICOLON
+
+break_statement 
+        : BREAK SEMICOLON
+
+continue_statement
+        : CONTINUE SEMICOLON
+
+declaration_statement
+        : VARIABLE modifier type IDENTIFIER declaration_statement_e
+
+declaration_statement_e
+		: SEMICOLON
+		| ASSIGN expression SEMICOLON
+
+modifier
+		: STATIC
+		| /* empty */
+
+block 
+        : LC statement_list RC
+
+
